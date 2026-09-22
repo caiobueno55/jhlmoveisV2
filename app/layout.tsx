@@ -1,11 +1,18 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fraunces, Inter } from 'next/font/google'
+import { Lora, Manrope } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
 
-const _inter = Inter({ subsets: ['latin'] })
-const _fraunces = Fraunces({ subsets: ['latin'] })
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+})
+
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora',
+})
 
 export const metadata: Metadata = {
   title: 'JHL Móveis | Qualidade e Confiança',
@@ -49,8 +56,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: 'light dark',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#faf7f2' },
-    { media: '(prefers-color-scheme: dark)', color: '#231d18' },
+    { media: '(prefers-color-scheme: light)', color: '#f7faf8' },
+    { media: '(prefers-color-scheme: dark)', color: '#102024' },
   ],
 }
 
@@ -61,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="bg-background">
-      <body className="font-sans antialiased">
+      <body className={`${manrope.variable} ${lora.variable} font-sans antialiased`}>
         {children}
         <Toaster position="top-center" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
