@@ -1,4 +1,13 @@
-export type CategorySlug = 'sofas' | 'mesas' | 'cadeiras' | 'quarto' | 'estantes'
+export type CategorySlug =
+  | 'sofas'
+  | 'mesas'
+  | 'cadeiras'
+  | 'quarto'
+  | 'estantes'
+  | 'cozinha'
+  | 'home-tv'
+  | 'escritorio'
+  | 'utilidades'
 
 export type Category = {
   slug: CategorySlug
@@ -10,8 +19,12 @@ export const CATEGORIES: Category[] = [
   { slug: 'sofas', label: 'Sofás', tagline: 'Conforto para o dia a dia' },
   { slug: 'mesas', label: 'Mesas', tagline: 'Para reunir e trabalhar' },
   { slug: 'cadeiras', label: 'Cadeiras', tagline: 'Estilo em cada detalhe' },
-  { slug: 'quarto', label: 'Quarto', tagline: 'Camas, criados e cômodas' },
+  { slug: 'quarto', label: 'Quarto', tagline: 'Camas, guarda-roupas e colchões' },
   { slug: 'estantes', label: 'Estantes', tagline: 'Organização com charme' },
+  { slug: 'cozinha', label: 'Cozinha', tagline: 'Módulos, balcões e pias' },
+  { slug: 'home-tv', label: 'Home & Painéis', tagline: 'Para a sala de TV' },
+  { slug: 'escritorio', label: 'Escritório', tagline: 'Mesas e organização pra trabalhar' },
+  { slug: 'utilidades', label: 'Utilidades', tagline: 'Sapateiras, aparadores e mais' },
 ]
 
 export function categoryLabel(slug: string): string {
